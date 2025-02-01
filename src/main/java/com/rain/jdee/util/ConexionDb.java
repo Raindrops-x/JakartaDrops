@@ -12,7 +12,6 @@ public class ConexionDb {
     public static Connection getConexion() throws SQLException {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Driver no encontrado!: "  + e.getMessage());
         }

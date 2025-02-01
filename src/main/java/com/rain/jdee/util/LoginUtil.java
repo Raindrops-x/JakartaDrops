@@ -10,14 +10,14 @@ public class LoginUtil {
     public Optional<Usuario> validarUsuario(HttpServletRequest req){
         HttpSession sesion = req.getSession();
         if(sesion != null){
-            Usuario usuario = (Usuario) req.getAttribute("usuario");
+            Usuario usuario = (Usuario) sesion.getAttribute("usuario");
             return Optional.ofNullable(usuario);
         }
         return Optional.empty();
     }
 
     public void activarSesionUsuario(HttpServletRequest req, Usuario usuario){
-        HttpSession sesion = req.getSession(false);
+        HttpSession sesion = req.getSession();
         sesion.setAttribute("usuario",usuario);
     }
 
