@@ -1,5 +1,6 @@
 package com.rain.jdee.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Celular {
@@ -7,12 +8,12 @@ public class Celular {
     private String nombre;
     private int precio;
     private Marca marca;
-    private Date fechaLanzamiento;
+    private LocalDate fechaLanzamiento;
 
     public Celular() {
     }
 
-    public Celular(Integer id, String nombre, int precio, Marca marca, Date fechaLanzamiento) {
+    public Celular(Integer id, String nombre, int precio, Marca marca, LocalDate fechaLanzamiento) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -44,11 +45,11 @@ public class Celular {
         this.precio = precio;
     }
 
-    public Date getFechaLanzamiento() {
+    public LocalDate getFechaLanzamiento() {
         return fechaLanzamiento;
     }
 
-    public void setFechaLanzamiento(Date fechaLanzamiento) {
+    public void setFechaLanzamiento(LocalDate fechaLanzamiento) {
         this.fechaLanzamiento = fechaLanzamiento;
     }
 
