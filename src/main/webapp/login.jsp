@@ -52,7 +52,7 @@
                         </div>
                         <div class="d-flex justify-content-center gap-3">
                                 <input type="submit" class="btn btn-success btn-lg" name="ingresar" value="Iniciar Sesión">
-                                <input type="submit" class="btn btn-primary btn-lg" name="registrar" value="Registrar Usuario">
+                                <a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/registro">Registrar Usuario</a>
                         </div>
                     </form>
             </div>

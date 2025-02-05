@@ -18,7 +18,7 @@ public class RepositorioCelularImp implements Repositorio<Celular>{
     public List<Celular> listar() throws SQLException {
         List<Celular> celulares = new ArrayList<>();
         String sql = "select c.*,m.nombre as marca from celular c " +
-                "inner join marca m on c.id_marca = m.id order by c.id desc;";
+                "inner join marca m on c.id_marca = m.id order by c.id asc;";
         try(Statement s = cn.createStatement();
             ResultSet rs = s.executeQuery(sql)){
             while(rs.next()){
@@ -33,11 +33,13 @@ public class RepositorioCelularImp implements Repositorio<Celular>{
     public Celular buscar(Integer id) throws SQLException {
         Celular celular = null;
         String sql = "select c.*,m.nombre as marca from celular c " +
-                "inner join marca m on c.id_marca = m.id where c.id=? order by c.id desc;";
+                "inner join marca m on c.id_marca = m.id where c.id=?";
         try(PreparedStatement ps = cn.prepareStatement(sql)){
             ps.setInt(1,id);
             try(ResultSet rs = ps.executeQuery()){
-                celular = generarCelular(rs);
+                if(rs.next()){
+                    celular = generarCelular(rs);
+                }
             }
         }
         return celular;

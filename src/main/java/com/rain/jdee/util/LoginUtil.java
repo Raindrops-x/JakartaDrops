@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class LoginUtil {
     public Optional<Usuario> validarUsuario(HttpServletRequest req){
-        HttpSession sesion = req.getSession();
+        HttpSession sesion = req.getSession(false);
         if(sesion != null){
             Usuario usuario = (Usuario) sesion.getAttribute("usuario");
             return Optional.ofNullable(usuario);

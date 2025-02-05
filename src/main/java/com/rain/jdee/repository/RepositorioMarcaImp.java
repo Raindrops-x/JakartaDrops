@@ -15,7 +15,7 @@ public class RepositorioMarcaImp implements Repositorio<Marca>{
     @Override
     public List<Marca> listar() throws SQLException {
         List<Marca> marcas = new ArrayList<>();
-        String sql = "select * from marca;";
+        String sql = "select * from marca order by id asc;";
         try(Statement s = cn.createStatement();
             ResultSet rs = s.executeQuery(sql)){
             while(rs.next()){
@@ -46,16 +46,15 @@ public class RepositorioMarcaImp implements Repositorio<Marca>{
         if(marca == null){
             return;
         }
-        String sql = "";
-        if(marca.getId() != null || marca.getId()>0){
+        String sql;
+        if(marca.getId() != null && marca.getId()>0){
             sql = "update marca set nombre=? where id=?;";
-        }
-        if(marca.getId() == null || marca.getId().equals(0)){
+        } else{
             sql = "insert into marca (nombre) values (?);";
         }
         try(PreparedStatement ps = cn.prepareStatement(sql)){
             ps.setString(1,marca.getNombre());
-            if(marca.getId() != null || marca.getId()>0){
+            if(marca.getId() != null && marca.getId()>0){
                 ps.setInt(2,marca.getId());
             }
             ps.executeUpdate();
