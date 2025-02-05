@@ -1,4 +1,4 @@
-package com.rain.jdee.controller;
+package com.rain.jdee.controller.usuario;
 
 import com.rain.jdee.util.LoginUtil;
 import jakarta.servlet.ServletException;
