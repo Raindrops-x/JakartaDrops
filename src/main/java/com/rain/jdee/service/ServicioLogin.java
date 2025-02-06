@@ -23,4 +23,13 @@ public class ServicioLogin implements ServiceLogin{
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void registrarUsuario(String nombre, String usuario, String pass) {
+        try{
+            repositorio.registrar(nombre,usuario,pass);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

@@ -40,6 +40,11 @@
                           <p>${error_login}</p>
                        </div>
                     </c:if>
+                    <c:if test="${not empty sugerencia}">
+                       <div class="card bg-success text-center" role="alert">
+                          <p>${sugerencia}</p>
+                       </div>
+                    </c:if>
 
                     <form action="/JakartaDrops/login" method="post">
                         <div class="form-group mb-3">

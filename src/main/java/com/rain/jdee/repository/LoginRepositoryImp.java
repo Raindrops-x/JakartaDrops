@@ -31,4 +31,15 @@ public class LoginRepositoryImp implements LRep<Usuario>{
         }
         return usuario;
     }
+
+    @Override
+    public void registrar(String nombre, String username, String pass) throws SQLException{
+        String sql = "insert into usuario (nombre,username,pass) values(?,?,?);";
+        try(PreparedStatement ps = cn.prepareStatement(sql)){
+            ps.setString(1,nombre);
+            ps.setString(2,username);
+            ps.setString(3,pass);
+            ps.executeUpdate();
+        }
+    }
 }

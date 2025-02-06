@@ -54,7 +54,7 @@ public class ServletFormularioCelulares extends HttpServlet {
         Service servicio = new ServicioProductoImp(cn);
         List<String> errores = new ArrayList<>();
         //Celular
-        String nombre = req.getParameter("nombre_celular");
+        String nombre = req.getParameter("nombre_celular").trim();
         if(nombre == null || nombre.isBlank()){
             errores.add("El nombre no puede estar vacio");
         }

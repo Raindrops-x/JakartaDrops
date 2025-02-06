@@ -42,7 +42,7 @@ public class ServletFormularioMarcas extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nombre = req.getParameter("nombre_marca");
+        String nombre = req.getParameter("nombre_marca").trim();
         Integer id;
         try{
             id = Integer.valueOf(req.getParameter("id"));
