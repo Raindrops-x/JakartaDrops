@@ -53,7 +53,7 @@
       </nav>
     <div class="text-center">
         <h4>Carro de compras</h4>
-        <h6>Compras del usuario ${nombre.nombre}</h6>
+        <h6>Compras del usuario ${usuario.nombre}</h6>
     </div>
 
     <div class="container d-flex justify-content-center py-3 my-3">
@@ -65,6 +65,7 @@
                     <th>Precio</th>
                     <th>Cantidad</th>
                     <th>SubTotal</th>
+                    <th>Quitar</th>
                 </tr>
             </thead>
             <tbody>
@@ -75,11 +76,15 @@
                         <td>${l.celular.precio}</td>
                         <td>${l.cantidad}</td>
                         <td>${l.calcularPrecio()}</td>
+                        <td><a href="${pageContext.request.contextPath}/carrito/quitar_celular?id=${l.celular.id}" class="btn btn-danger">X</a><td>
                     </tr>
                 </c:forEach>
                 <tr>
                     <th colspan="4">Total de Venta</th>
                     <td>${carro.calcularTotalCarro()}</td>
+                </tr>
+                <tr>
+                    <td><a href="${pageContext.request.contextPath}/carrito/vaciar_carrito" class="btn btn-danger">Vaciar Carro</a><td>
                 </tr>
             </tbody>
         </table>

@@ -33,6 +33,10 @@ public class Carro {
         return carro.stream().mapToInt(LineaCelular::calcularPrecio).sum();
     }
 
+    public void quitarLinea(int i){
+        carro.removeIf(l -> l.getCelular().getId().equals(i));
+    }
+
     public void vaciarCarrito(){
         carro.clear();
     }
