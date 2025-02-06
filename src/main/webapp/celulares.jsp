@@ -80,7 +80,13 @@
         <td>${c.fechaLanzamiento}</td>
         <td>${c.marca.nombre}</td>
         <c:if test="${not empty usuario.nombre}">
-           <td><a href="${pageContext.request.contextPath}/carrito/agregar_celular?id=${c.id}" class="btn btn-warning">Agregar</a><td>
+           <td>
+           <form action="${pageContext.request.contextPath}/carrito/agregar_celular" method="get">
+               <input type="hidden" name="id" value="${c.id}">
+               <input type="number" id="cantidad" name="cantidad">
+               <button type="submit" class="btn btn-primary">Agregar</a>
+           </form>
+           <td>
            <td><a href="${pageContext.request.contextPath}/celulares/editar_celular?id=${c.id}" class="btn btn-warning">Ver</a><td>
            <td><a href="${pageContext.request.contextPath}/celulares/eliminar_celular?id=${c.id}" class="btn btn-danger">X</a><td>
         </c:if>

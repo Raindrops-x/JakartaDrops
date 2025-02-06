@@ -6,6 +6,11 @@ public class LineaCelular {
     private Celular celular;
     private int cantidad;
 
+    public LineaCelular(Celular celular) {
+        this.celular = celular;
+        cantidad = 0;
+    }
+
     public LineaCelular(Celular celular, int cantidad) {
         this.celular = celular;
         this.cantidad = cantidad;

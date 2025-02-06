@@ -15,7 +15,7 @@ public class Carro {
         return carro;
     }
 
-    public void addLineaCelular(LineaCelular linea){
+    public void addLineaCelular(LineaCelular linea, int cantidad){
         if(linea == null){
             return;
         }
@@ -23,7 +23,7 @@ public class Carro {
             Optional<LineaCelular> l = carro.stream().filter(linea::equals).findFirst();
             if(l.isPresent()){
                 LineaCelular lineaobtenida = l.get();
-                lineaobtenida.setCantidad(lineaobtenida.getCantidad()+1);
+                lineaobtenida.setCantidad(lineaobtenida.getCantidad()+cantidad);
             }
         } else{
             carro.add(linea);

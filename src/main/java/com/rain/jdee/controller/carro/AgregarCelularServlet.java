@@ -23,13 +23,21 @@ public class AgregarCelularServlet extends HttpServlet {
         Connection cn = (Connection) req.getAttribute("conexion");
         Service servicio = new ServicioProductoImp(cn);
         Integer id;
+        Integer cantidad;
+        String c = req.getParameter("cantidad");
         try{
+            if(c == null || c.isEmpty()){
+                cantidad = 1;
+            } else{
+                cantidad = Integer.parseInt(c);
+            }
             id = Integer.parseInt(req.getParameter("id"));
+
             Optional<Celular> celular = servicio.obtenerCelular(id);
             if(celular.isPresent()){
                 HttpSession sesion = req.getSession();
                 Carro carro = (Carro) sesion.getAttribute("carro");
-                carro.addLineaCelular(new LineaCelular(celular.get(),1));
+                carro.addLineaCelular(new LineaCelular(celular.get(),cantidad),cantidad);
                 resp.sendRedirect(req.getContextPath()+"/carrito/ver_mi_carrito");
             }
         } catch (NumberFormatException e) {
