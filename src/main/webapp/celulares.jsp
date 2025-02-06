@@ -32,6 +32,11 @@
           </li>
         </c:if>
         <c:if test="${not empty usuario.nombre}">
+                        <li class="nav-item">
+                           <a class="nav-link" href="${pageContext.request.contextPath}/carrito.jsp">Mi carrito</a>
+                        </li>
+                      </c:if>
+        <c:if test="${not empty usuario.nombre}">
           <li class="nav-item">
             <a class="nav-link" href="${pageContext.request.contextPath}/logout.html">Cerrar Sesion</a>
           </li>
@@ -60,6 +65,7 @@
         <th>Fecha Lanzamiento</th>
         <th>Marca</th>
         <c:if test="${not empty usuario.nombre}">
+           <th>Carrito<th>
            <th>Editar<th>
            <th>Eliminar<th>
         </c:if>
@@ -74,6 +80,7 @@
         <td>${c.fechaLanzamiento}</td>
         <td>${c.marca.nombre}</td>
         <c:if test="${not empty usuario.nombre}">
+           <td><a href="${pageContext.request.contextPath}/carrito/agregar_celular?id=${c.id}" class="btn btn-warning">Agregar</a><td>
            <td><a href="${pageContext.request.contextPath}/celulares/editar_celular?id=${c.id}" class="btn btn-warning">Ver</a><td>
            <td><a href="${pageContext.request.contextPath}/celulares/eliminar_celular?id=${c.id}" class="btn btn-danger">X</a><td>
         </c:if>

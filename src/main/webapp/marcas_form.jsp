@@ -32,6 +32,11 @@
               </li>
             </c:if>
             <c:if test="${not empty usuario.nombre}">
+                            <li class="nav-item">
+                               <a class="nav-link" href="${pageContext.request.contextPath}/carrito.jsp">Mi carrito</a>
+                            </li>
+                          </c:if>
+            <c:if test="${not empty usuario.nombre}">
               <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/logout.html">Cerrar Sesion</a>
               </li>

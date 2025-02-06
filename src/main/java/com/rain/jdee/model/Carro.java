@@ -29,6 +29,9 @@ public class Carro {
             carro.add(linea);
         }
     }
+    public int calcularTotalCarro(){
+        return carro.stream().mapToInt(LineaCelular::calcularPrecio).sum();
+    }
 
     public void vaciarCarrito(){
         carro.clear();
