@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebFilter({"/logout","/logout.html", "/celulares/*", "/marcas/*", "/carrito/*"})
+@WebFilter({"/logout","/logout.html", "/celulares/*", "/marcas/*", "/carrito"})
 public class FiltroLogin implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)

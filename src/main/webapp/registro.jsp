@@ -9,25 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/JakartaDrops/index.html">RAINDROPS</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/celulares.html">Celulares</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/marcas.html">Marcas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/login.html">Iniciar Sesion</a>
-                </li>
-            </ul>
-            <button class="btn btn-danger ms-auto" onclick="cerrarVentana();">Ø</button>
-        </div>
-    </div>
-</nav>
+    <jsp:include page="/layout/navbar.jsp"/>
     <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="card shadow-lg p-4" style="max-width: 500px; width: 100%;">
         <c:if test="${not empty errores}">
@@ -61,5 +43,4 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+<jsp:include page="layout/footer.jsp"/>

@@ -11,25 +11,7 @@
           crossorigin="anonymous">
 </head>
 <body class="bg-light d-flex flex-column" style="min-height: 100vh">
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/JakartaDrops/index.html">RAINDROPS</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/celulares.html">Celulares</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/marcas.html">Marcas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/login.html">Iniciar Sesion</a>
-                </li>
-            </ul>
-            <button class="btn btn-danger ms-auto" onclick="cerrarVentana();">Ø</button>
-        </div>
-    </div>
-</nav>
+    <jsp:include page="/layout/navbar.jsp"/>
     <div class="container d-flex justify-content-center align-items-center flex-grow-1" style="padding-top: 40px;">
         <div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
             <div class="col-12 col-md-12">
@@ -63,5 +45,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+<jsp:include page="layout/footer.jsp"/>
