@@ -10,16 +10,10 @@ import jakarta.servlet.http.HttpSessionListener;
 public class CarroListener implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent se) {
-        HttpSession sesion = se.getSession();
-        if(sesion != null){
-            Carro carro = new Carro();
-            sesion.setAttribute("carro", carro);
-        }
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
-        HttpSession sesion = se.getSession();
-        sesion.removeAttribute("carro");
+
     }
 }

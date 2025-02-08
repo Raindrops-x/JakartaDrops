@@ -40,6 +40,11 @@
             <version>9.0.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.weld.servlet</groupId>
+            <artifactId>weld-servlet-core</artifactId>
+            <version>4.0.1.SP1</version>
+        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

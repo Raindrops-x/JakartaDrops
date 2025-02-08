@@ -5,6 +5,7 @@ import com.rain.jdee.model.Celular;
 import com.rain.jdee.model.LineaCelular;
 import com.rain.jdee.service.Service;
 import com.rain.jdee.service.ServicioProductoImp;
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,6 +19,10 @@ import java.util.Optional;
 
 @WebServlet("/carrito/agregar_celular")
 public class AgregarCelularServlet extends HttpServlet {
+
+    @Inject
+    private Carro carro;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Connection cn = (Connection) req.getAttribute("conexion");
@@ -35,8 +40,6 @@ public class AgregarCelularServlet extends HttpServlet {
 
             Optional<Celular> celular = servicio.obtenerCelular(id);
             if(celular.isPresent()){
-                HttpSession sesion = req.getSession();
-                Carro carro = (Carro) sesion.getAttribute("carro");
                 carro.addLineaCelular(new LineaCelular(celular.get(),cantidad),cantidad);
                 resp.sendRedirect(req.getContextPath()+"/carrito/ver_mi_carrito");
             }
