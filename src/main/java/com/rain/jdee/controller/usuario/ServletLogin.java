@@ -20,7 +20,7 @@ public class ServletLogin extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LoginUtil utilidad = new LoginUtil();
         if(utilidad.validarUsuario(req).isPresent()){
-            getServletContext().getRequestDispatcher("/index_logged.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
         } else{
             getServletContext().getRequestDispatcher("/login.jsp").forward(req,resp);
         }
@@ -37,7 +37,7 @@ public class ServletLogin extends HttpServlet {
             if(usuario.isPresent()){
                 LoginUtil utilidad = new LoginUtil();
                 utilidad.activarSesionUsuario(req,usuario.get());
-                getServletContext().getRequestDispatcher("/index_logged.jsp").forward(req,resp);
+                getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
             } else{
                 String error = "Las credenciales no son correctas";
                 req.setAttribute("error_login",error);

@@ -2,7 +2,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <a class="navbar-brand" href="/JakartaDrops/index_logged.jsp">RAINDROPS</a>
+    <a class="navbar-brand" href="${pageContext.request.contextPath}/index.jsp">RAINDROPS</a>
 
     <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarNav">
       <ul class="navbar-nav me-auto">
@@ -22,7 +22,7 @@
         </c:if>
         <c:if test="${not empty usuario.nombre}">
                         <li class="nav-item">
-                           <a class="nav-link" href="${pageContext.request.contextPath}/carrito.jsp">Mi carrito</a>
+                           <a class="nav-link" href="${pageContext.request.contextPath}/carrito.jsp">Mi carrito (${carro.carro.size()})</a>
                         </li>
                       </c:if>
         <c:if test="${not empty usuario.nombre}">

@@ -1,12 +1,11 @@
 # JakartaDrops
 
-Probando Jakarta EE 9.0, Mysql, Tomcat con Maven.
-Ademas, utilizando el patron repository, algunas practicas como la inversion de dependencias, inyeccion de dependencias, etc.
+Probando Jakarta EE 9.0, MySQL, Tomcat con Maven
+Además, utilizando el patrón repository, algunas prácticas como la inversión de dependencias, inyección de dependencias, etc.
 
-No estoy muy centrado en la parte de las vistas, aunque intentare hacer mi mejor esfuerzo para que sea agradable.
+No estoy muy centrado en la parte de las vistas, aunque intentaré hacer mi mejor esfuerzo para que sean agradables.
 
 Notas:
-Estoy usando variables de sistema y variables de entorno que he definido manualmente en mi conf <catalina.bat> de tomcat.
-De momento, solo implemento un loggin algo sencillo, pero que eventualmente lo hare mas robusto.
+De momento, solo implemento un login algo sencillo, pero eventualmente lo haré más robusto.
 
-En conclusion, es un proyecto algo pequeño, solo para comprobar lo que aprendi de momento y en su mayoria en los estilos, me apoyare directamente en la propia doscumentación de Boostrap.
+En conclusión, es un proyecto algo pequeño, solo para comprobar lo que he aprendido hasta el momento y, en su mayoría, en los estilos, me apoyaré directamente en la propia documentación de Bootstrap.

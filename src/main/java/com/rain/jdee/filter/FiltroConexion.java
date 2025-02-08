@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -30,7 +31,7 @@ public class FiltroConexion implements Filter {
                 res.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR,e.getMessage());
                 e.printStackTrace();
             }
-        } catch (SQLException e) {
+        } catch (SQLException | NamingException e) {
             throw new RuntimeException(e);
         }
     }

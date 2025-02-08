@@ -1,20 +1,18 @@
 package com.rain.jdee.util;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexionDb {
-    private static String url = System.getenv("mysql_url");
-    private static String username = System.getenv("mysql_usuario");
-    private static String password = System.getenv("mysql_pass");
-
-    public static Connection getConexion() throws SQLException {
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("Driver no encontrado!: "  + e.getMessage());
-        }
-        return DriverManager.getConnection(url,username,password);
+    public static Connection getConexion() throws SQLException, NamingException {
+        Context initContext = new InitialContext();
+        Context envContext  = (Context)initContext.lookup("java:/comp/env");
+        DataSource ds = (DataSource)envContext.lookup("jdbc/mysqlDB");
+        return ds.getConnection();
     }
 }

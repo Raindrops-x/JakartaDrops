@@ -12,7 +12,7 @@
 </head>
 <body>
   <jsp:include page="/layout/navbar.jsp"/>
-  <div class="container">
+  <div class="container my-3">
     <c:if test="${errores != null}">
         <div class="card bg-danger text-center">
         <c:forEach items="${errores}" var="e">
